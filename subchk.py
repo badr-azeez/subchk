@@ -77,9 +77,7 @@ def get_urls(subdomains):
                 subdomains_list.append('https://' + sub)
             else:
                 subdomains_list.append(sub)
-
-    print(Colors.OKBLUE + 'SubDomain Count:', len(subdomains_list))
-
+                
 
 get_urls(argv.subdomains)
 
