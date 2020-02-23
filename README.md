@@ -17,5 +17,5 @@ pip install requests argparse
 
 ```python
 python3 subchk.py [-h] -s SUBDOMAINS [-t TIMEOUT] [-o OUTPUT]
-python3 subchk.py -s subdomain.txt -t 1  -o output/live.txt 
 python3 subchk.py -s subdomain.txt 
+python3 subchk.py -s subdomain.txt -t 5  -o output/live.txt 
