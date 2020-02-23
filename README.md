@@ -10,7 +10,7 @@ subchk is a Python3 Script SubDomain Checker Http & Https
 
 ```bash
 git clone https://github.com/badr-azeez/subchk.git
-pip install requests argparse
+pip3 install requests argparse
 ```
 
 ## Usage
