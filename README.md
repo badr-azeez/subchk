@@ -2,9 +2,11 @@
 
 subchk is a Python3 Script SubDomain Checker Http & Https
 
-## Installation
-
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+### Features 
+- can use threading
+- Get URL after  Redirect 
+- autosave when catch Live URL
+- No Repeated In the  saved File
 
 ```bash
 git clone https://github.com/badr-azeez/subchk.git
