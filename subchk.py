@@ -103,6 +103,9 @@ def get_status(url):
         except:
             print(Colors.FAIL + Colors.BOLD + url, '[Not Work]')
 
+def live():
+    num_lines = sum(1 for line in open(argv.output))
+    print(Colors.OKBLUE + '\nLive SubDomain:', num_lines)
 
 if __name__ == "__main__":
     try:
@@ -111,7 +114,7 @@ if __name__ == "__main__":
         results = pool.map(get_status, subdomains_list)
         pool.close()
         pool.join()
-        print(Colors.OKBLUE + '\nLive SubDomain:', len(live))
+        live()
     except KeyboardInterrupt:
-        print(Colors.OKBLUE + '\nLive SubDomain:', len(live))
+        live()
         sys.exit('\nBye')
