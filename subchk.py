@@ -116,6 +116,7 @@ if __name__ == "__main__":
         results = pool.map(get_status, subdomains_list)
         pool.close()
         pool.join()
+        liven()
     except KeyboardInterrupt:
         liven()
         sys.exit('\nBye')
