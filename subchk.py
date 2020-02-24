@@ -37,8 +37,8 @@ logo = '''{}
                    |#| Wilaia Shield Team |#|
                    {}B{}adr {}A{}zeez fb.com/linux.2.0.1.4
                    
-'''.format(Colors.BOLD+Colors.OKBLUE, Colors.FAIL,  Colors.OKBLUE, Colors.BOLD + Colors.FAIL,Colors.OKBLUE)
-msg = logo+'''{}usage: {} [-h] -s SUBDOMAINS [-t Threads] [-o OUTPUT]
+'''.format(Colors.BOLD + Colors.OKBLUE, Colors.FAIL, Colors.OKBLUE, Colors.BOLD + Colors.FAIL, Colors.OKBLUE)
+msg = logo + '''{}usage: {} [-h] -s SUBDOMAINS [-t Threads] [-o OUTPUT]
 
 optional arguments:
   -h, --help                        show this help message and exit
@@ -78,6 +78,7 @@ def get_urls(subdomains):
             else:
                 subdomains_list.append(sub)
 
+
 get_urls(argv.subdomains)
 
 
@@ -103,9 +104,10 @@ def get_status(url):
         except:
             print(Colors.FAIL + Colors.BOLD + url, '[Not Work]')
 
-def live():
-    num_lines = sum(1 for line in open(argv.output))
-    print(Colors.OKBLUE + '\nLive SubDomain:', num_lines)
+
+def liven():
+    print(Colors.OKBLUE + '\nLive SubDomain:', sum(1 for line in open(argv.output)))
+
 
 if __name__ == "__main__":
     try:
@@ -114,7 +116,6 @@ if __name__ == "__main__":
         results = pool.map(get_status, subdomains_list)
         pool.close()
         pool.join()
-        live()
     except KeyboardInterrupt:
-        live()
+        liven()
         sys.exit('\nBye')
