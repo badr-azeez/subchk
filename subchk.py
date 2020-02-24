@@ -81,13 +81,12 @@ def get_urls(subdomains):
 
 get_urls(argv.subdomains)
 
-
 def get_status(url):
     with open(argv.output, 'a+') as save:
         try:
             r = requests.get(url, timeout=3)
             if r.status_code == 200 and r.history:
-                if url not in live:
+                if r.url not in live:
                     live.append(r.url)
                     save.write(r.url + '\n')
                 print(Colors.WARNING + Colors.BOLD + '|' + str(
